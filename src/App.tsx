@@ -1,7 +1,9 @@
+import { AppRouter } from "./router/AppRouter";
+
 function App() {
   return (
     <>
-      <p className="text-3xl font-bold underline">Hola mundo</p>
+      <AppRouter />
     </>
   );
 }
