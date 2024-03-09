@@ -1,8 +1,18 @@
+import { useDispatch } from "react-redux";
+
+import { goToPassword } from "../../../store/slices/steps/stepsSlice";
+
 import { Button, Input } from "../../../components";
 
 type EmailProps = {};
 
 export const Email = ({}: EmailProps): React.ReactElement => {
+  const dispatch = useDispatch();
+
+  const handleContinue = (): void => {
+    dispatch(goToPassword());
+  };
+
   return (
     <div className="w-6/12 flex flex-col gap-5 bg-white text-black px-20 py-10 rounded-3xl">
       <div>
@@ -16,7 +26,7 @@ export const Email = ({}: EmailProps): React.ReactElement => {
         recibirás indicaciones para crearla.
       </p>
       <Input placeholder="Correo electronico" />
-      <Button label="Continuar" />
+      <Button onClick={handleContinue} label="Continuar" />
     </div>
   );
 };

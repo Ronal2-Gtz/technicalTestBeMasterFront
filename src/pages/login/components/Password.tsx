@@ -1,9 +1,30 @@
+import { useDispatch } from "react-redux";
+
+import { goToEmail } from "../../../store/slices/steps/stepsSlice";
+
 import { Button, Input } from "../../../components";
 
+type EditButtonProps = {
+  onClick: () => void;
+};
 type PasswordProps = {};
 
+const EditEmailButton = ({ onClick }: EditButtonProps): React.ReactElement => (
+  <button
+    onClick={onClick}
+    className="text-[#4d6dbd] font-light hover:underline"
+  >
+    (editar)
+  </button>
+);
+
 export const Password = ({}: PasswordProps) => {
+  const dispatch = useDispatch();
   const email = "Carrilloricki2211@gmail.com";
+
+  const handleEditEmail = (): void => {
+    dispatch(goToEmail());
+  };
 
   return (
     <div className="w-6/12 flex flex-col gap-5 bg-white text-black px-20 py-10 rounded-3xl">
@@ -13,7 +34,7 @@ export const Password = ({}: PasswordProps) => {
       </div>
       <p className="text-base font-light">
         Es necesario iniciar sesión en la cuenta con tu correo:
-        {email}.
+        {email} <EditEmailButton onClick={handleEditEmail} />.
       </p>
       <div>
         <Input type="password" placeholder="Correo electronico" />
