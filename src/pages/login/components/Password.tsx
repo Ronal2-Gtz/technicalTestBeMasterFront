@@ -1,31 +1,26 @@
-import { useDispatch } from "react-redux";
+import { ChangeEvent } from "react";
 
-import { goToEmail } from "../../../store/slices/steps/stepsSlice";
-
-import { Button, Input } from "../../../components";
+import { Button, Input, ErrorMessage } from "../../../components";
 
 type EditButtonProps = {
   onClick: () => void;
 };
-type PasswordProps = {};
+type PasswordProps = {
+  email: string;
+  password: string;
+  isError: boolean;
+  handleEditEmail: () => void;
+  handleLogin: () => void;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+};
 
-const EditEmailButton = ({ onClick }: EditButtonProps): React.ReactElement => (
-  <button
-    onClick={onClick}
-    className="text-[#4d6dbd] font-light hover:underline"
-  >
-    (editar)
-  </button>
-);
-
-export const Password = ({}: PasswordProps) => {
-  const dispatch = useDispatch();
-  const email = "Carrilloricki2211@gmail.com";
-
-  const handleEditEmail = (): void => {
-    dispatch(goToEmail());
-  };
-
+export const Password = ({
+  email,
+  isError,
+  onChange,
+  handleEditEmail,
+  handleLogin,
+}: PasswordProps) => {
   return (
     <div className="w-6/12 flex flex-col gap-5 bg-white text-black px-20 py-10 rounded-3xl">
       <div>
@@ -37,12 +32,22 @@ export const Password = ({}: PasswordProps) => {
         {email} <EditEmailButton onClick={handleEditEmail} />.
       </p>
       <div>
-        <Input type="password" placeholder="Correo electronico" />
+        <div>
+          <Input
+            name="password"
+            type="password"
+            placeholder="Correo electronico"
+            onChange={onChange}
+          />
+          {isError && (
+            <ErrorMessage>Debe ingresar una contraseña.</ErrorMessage>
+          )}
+        </div>
         <p className="text-[#81848b]  text-[12px]">
           Distingue mayúsculas y minúsculas.
         </p>
       </div>
-      <Button label="Iniciar sesión" />
+      <Button onClick={handleLogin} label="Iniciar sesión" />
 
       <p className="text-[#0040E5] text-sm font-light ">
         ¿Problemas para iniciar sesión? Enviar un código de acceso único
@@ -50,3 +55,12 @@ export const Password = ({}: PasswordProps) => {
     </div>
   );
 };
+
+const EditEmailButton = ({ onClick }: EditButtonProps): React.ReactElement => (
+  <button
+    onClick={onClick}
+    className="text-[#4d6dbd] font-light hover:underline"
+  >
+    (editar)
+  </button>
+);
