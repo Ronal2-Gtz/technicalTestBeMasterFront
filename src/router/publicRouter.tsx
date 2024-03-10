@@ -1,4 +1,6 @@
 import { Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
 
 type PublicRouteProps = {
   children: React.ReactElement;
@@ -7,7 +9,7 @@ type PublicRouteProps = {
 export const PublicRoute = ({
   children,
 }: PublicRouteProps): React.ReactElement => {
-  const isLogged = true;
+  const status = useSelector((state: RootState) => state.auth.status);
 
-  return !isLogged ? children : <Navigate to="/home" />;
+  return status === "not-authenticated" ? children : <Navigate to="/home" />;
 };

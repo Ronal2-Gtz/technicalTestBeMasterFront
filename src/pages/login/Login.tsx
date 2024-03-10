@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import LogoDisney from "../../assets/logo.png";
@@ -5,7 +6,6 @@ import { Email } from "./components/Email";
 import { Password } from "./components/Password";
 import { RootState } from "../../store";
 import { useForm } from "../../hooks/useForm";
-import { useState } from "react";
 import { isValidEmail } from "../../utils";
 import { goToEmail, goToPassword } from "../../store/slices/steps/stepsSlice";
 
