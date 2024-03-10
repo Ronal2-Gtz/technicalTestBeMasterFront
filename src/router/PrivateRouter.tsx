@@ -1,6 +1,7 @@
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
+import { useMemo } from "react";
 
 type PrivateRouteProps = {
   children: React.ReactElement;
@@ -9,7 +10,8 @@ type PrivateRouteProps = {
 export const PrivateRoute = ({
   children,
 }: PrivateRouteProps): React.ReactElement => {
-  const status  = useSelector((state: RootState) => state.auth.status );
+  const status = useSelector((state: RootState) => state.auth.status);
+  const isAuthenticating = useMemo(() => status === "authenticated", [status]);
 
-  return status === 'authenticated' ? children : <Navigate to="/login" />;
+  return isAuthenticating ? children : <Navigate to="/login" />;
 };

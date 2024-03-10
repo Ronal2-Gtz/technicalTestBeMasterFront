@@ -8,6 +8,7 @@ import { RootState } from "../../store";
 import { useForm } from "../../hooks/useForm";
 import { isValidEmail } from "../../utils";
 import { goToEmail, goToPassword } from "../../store/slices/steps/stepsSlice";
+import { login } from "../../store/slices/auth/authSlice";
 
 type User = {
   email: string;
@@ -44,7 +45,12 @@ export const Login = ({}: LoginProps): React.ReactElement => {
     if (!password) {
       return setErrors((prev) => ({ ...prev, isErrorPassword: true }));
     }
-    console.log({ email, password });
+    const user = { user: 'ronaldo', id: 1 }
+    localStorage.setItem(
+      'user',
+      JSON.stringify({ ...user, status: 'authenticated' })
+    )
+    dispatch(login(user))
   };
 
   const loginStep = {

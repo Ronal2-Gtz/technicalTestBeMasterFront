@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { PublicRoute } from "./publicRouter";
+import { PublicRoute } from "./PublicRouter";
 import { PrivateRoute } from "./PrivateRouter";
 import { ContentCategory, ContentDetails, Home, Login } from "../pages";
 
@@ -25,9 +25,9 @@ export const AppRouter = (): React.ReactElement => {
             <PrivateRoute>
               <Routes>
                 <Route path="home" element={<Home />} />
-                <Route path="category" element={<ContentCategory />} />
+                <Route path="category/:categoryId" element={<ContentCategory />} />
                 <Route path="detail" element={<ContentDetails />} />
-                <Route path="/" element={<Navigate to="/home" />} />
+                <Route path="/*" element={<Navigate to="/home" />} />
               </Routes>
             </PrivateRoute>
           }
