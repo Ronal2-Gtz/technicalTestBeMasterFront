@@ -29,7 +29,7 @@ export const AppRouter = (): React.ReactElement => {
               <Routes>
                 <Route path="home" element={<Home />} />
                 <Route path="category/:categoryId" element={<ContentCategory />} />
-                <Route path="detail" element={<ContentDetails />} />
+                <Route path="detail/:detailId" element={<ContentDetails />} />
                 <Route path="/*" element={<Navigate to="/home" />} />
               </Routes>
               </>
