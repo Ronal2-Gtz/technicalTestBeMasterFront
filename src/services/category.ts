@@ -2,7 +2,7 @@ import { UseQueryResult, useQuery } from "react-query";
 import axios from "axios";
 import { type ResponseAttr, type ErrorAttr } from "./types";
 
-const PATH = "http://localhost:3000";
+const PATH = "https://technicaltestbemasterback-dev-jmzr.2.us-1.fl0.io";
 
 type Movie = {
   path: string;
