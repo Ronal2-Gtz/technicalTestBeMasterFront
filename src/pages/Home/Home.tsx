@@ -25,7 +25,7 @@ const categories: Array<Category> = [
 ];
 
 export const Home = ({}: HomeProps): React.ReactElement => (
-  <div className="p-10 flex flex-col justify-center items-center gap-10">
+  <div className="p-10 flex flex-col justify-center items-center gap-10 pt-28 md:mt-0">
     <div className="flex flex-wrap gap-7 justify-center items-center">
       {categories.map(({ img, alt, href }) => (
         <CardCategory key={href} image={img} alt={alt} href={href} />

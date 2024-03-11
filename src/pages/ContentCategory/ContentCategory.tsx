@@ -32,7 +32,7 @@ export const ContentCategory = (): React.ReactElement => {
     }
 
     return (
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center md:mt-0">
         <img
           src={getImage[categoryId as string]}
           alt="icon"
