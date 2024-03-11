@@ -17,7 +17,7 @@ export const Navbar = (): React.ReactElement => {
 
   return (
     <header>
-      <nav className="lg:px-6 py-2.5 shadow-2xl min-h-[16px] ">
+      <nav className="px-2 lg:px-6 py-2.5 shadow-2xl min-h-[16px] ">
         <div className="flex md:flex-wrap justify-between items-center w-full mx-auto max-w-screen-xl">
           <Link to='home' className="flex items-center">
             <span className="self-center text-xl font-semibold whitespace-nowrap ">

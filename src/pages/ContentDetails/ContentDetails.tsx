@@ -32,7 +32,7 @@ export const ContentDetails = (): React.ReactElement => {
         height: "calc(100vh - 72px)",
       }}
     >
-      <div className="w-5/12 h-full flex flex-col items-start justify-center gap-7 p-10">
+      <div className=" w-full md:w-5/12 h-full flex flex-col items-start justify-center gap-7 p-10">
         <h1 className=" font-extrabold text-4xl">{data?.movie.name}</h1>
         <p>{data?.movie.dateAndTime}</p>
         <div>

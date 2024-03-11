@@ -17,7 +17,7 @@ export const Email = ({
   handleContinue,
 }: EmailProps): React.ReactElement => {
   return (
-    <div className="w-6/12 flex flex-col gap-5 bg-white text-black px-20 py-10 rounded-3xl">
+    <div className=" w-11/12 md:w-6/12 flex flex-col gap-5 bg-white text-black md:px-20 px-10 py-10 md:py-10 rounded-3xl">
       <div>
         <p className="text-sm ">PASO 1</p>
         <h1 className="text-2xl font-semibold">
