@@ -1,12 +1,26 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useGetMoviesByCategory } from "../../services/category";
 import { Loading } from "../../components/Loading/Loading";
-import { getImage } from "../../utils";
+import {
+  logoDisney,
+  logoMarvel,
+  logoNatGeo,
+  logoPixar,
+  logoStarWars,
+} from "../../assets";
 import { Button } from "../../components";
 
 type RouteParams = {
   categoryId: string;
 };
+
+export const getImage:Record<string, string> = {
+  disney: logoDisney,
+  pixar: logoPixar,
+  natgeo: logoNatGeo,
+  marvel: logoMarvel,
+  starwars: logoStarWars,
+}
 
 export const ContentCategory = (): React.ReactElement => {
     const navigate = useNavigate();
