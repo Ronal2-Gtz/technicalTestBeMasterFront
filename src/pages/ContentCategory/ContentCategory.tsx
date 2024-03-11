@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useGetMoviesByCategory } from "../../services/category";
+import { Loading } from "../../components/Loading/Loading";
 
 type RouteParams = {
   categoryId: string;
@@ -8,13 +9,14 @@ type RouteParams = {
 type ContentCategoryProps = {};
 
 export const ContentCategory = ({}: ContentCategoryProps): React.ReactElement => {
-  const { categoryId } = useParams<RouteParams>();
+    const { categoryId } = useParams<RouteParams>();
+    const { data, isLoading, isFetching } = useGetMoviesByCategory(categoryId!);
 
-  console.log(categoryId)
+    if (isLoading || isFetching) {
+      return <Loading />;
+    }
 
-  const { data, isError, isLoading } = useGetMoviesByCategory(categoryId!);
-
-  console.log(data)
+    console.log(data);
 
     return (
       <>
