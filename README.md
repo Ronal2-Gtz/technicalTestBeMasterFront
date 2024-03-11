@@ -12,7 +12,7 @@ Para comenzar con la prueba técnica, sigue las siguientes indicaciones:
     
     2. Inicia la aplicación con el siguiente comando:
     
-    npm start
+    npm run dev
 
 **Nota:** También puedes visualizar la aplicación en línea [aquí](https://technical-test-be-master-front-ebn6.vercel.app/).
 
