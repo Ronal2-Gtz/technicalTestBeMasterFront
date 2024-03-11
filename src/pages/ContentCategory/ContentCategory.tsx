@@ -36,7 +36,7 @@ export const ContentCategory = (): React.ReactElement => {
         <img
           src={getImage[categoryId as string]}
           alt="icon"
-          className="w-3/12"
+          className="w-3/12  min-w-72"
         />
         <div className="w-full flex items-center justify-center flex-wrap gap-5 ">
           {data?.movies.map((movie) => (

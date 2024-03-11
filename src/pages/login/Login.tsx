@@ -76,7 +76,7 @@ export const Login = ({}: LoginProps): React.ReactElement => {
   };
 
   return (
-    <div className=" mt-10 flex flex-col gap-7 justify-center items-center">
+    <div className="mt-10 flex flex-col gap-7 justify-center items-center">
       <img src={LogoDisney} alt="logo disney" />
       {loginStep[step]}
     </div>
