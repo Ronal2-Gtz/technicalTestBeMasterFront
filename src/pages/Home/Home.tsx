@@ -19,7 +19,7 @@ type HomeProps = {};
 const categories: Array<Category> = [
   { img: logoDisney, alt: "logoDisney", href: "/category/disney" },
   { img: logoMarvel, alt: "logoMarvel", href: "/category/marvel" },
-  { img: logoNatGeo, alt: "logoNatGeo", href: "/category/natGeo" },
+  { img: logoNatGeo, alt: "logoNatGeo", href: "/category/natgeo" },
   { img: logoPixar, alt: "logoPixar", href: "/category/pixar" },
   { img: logoStarWars, alt: "logoStarWars", href: "/category/starwars" },
 ];
