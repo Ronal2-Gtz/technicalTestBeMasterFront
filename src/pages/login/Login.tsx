@@ -45,12 +45,13 @@ export const Login = ({}: LoginProps): React.ReactElement => {
     if (!password) {
       return setErrors((prev) => ({ ...prev, isErrorPassword: true }));
     }
-    const user = { user: 'ronaldo', id: 1 }
+    const user = { user: email, id: Math.random() }
     localStorage.setItem(
       'user',
       JSON.stringify({ ...user, status: 'authenticated' })
     )
     dispatch(login(user))
+    dispatch(goToEmail());
   };
 
   const loginStep = {

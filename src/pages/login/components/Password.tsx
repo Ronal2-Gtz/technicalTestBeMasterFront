@@ -28,15 +28,15 @@ export const Password = ({
         <h1 className="text-2xl font-semibold">Escribir contraseña</h1>
       </div>
       <p className="text-base font-light">
-        Es necesario iniciar sesión en la cuenta con tu correo:
-        {email} <EditEmailButton onClick={handleEditEmail} />.
+        Es necesario iniciar sesión en la cuenta con tu correo: 
+        <span className="font-semibold">{` ${email}`}</span> <EditEmailButton onClick={handleEditEmail} />.
       </p>
       <div>
         <div>
           <Input
             name="password"
             type="password"
-            placeholder="Correo electronico"
+            placeholder="Contraseña"
             onChange={onChange}
           />
           {isError && (

@@ -1,12 +1,19 @@
 import { useMemo } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button } from "../Button/Button";
 import { RootState } from "../../store";
+import { logout } from "../../store/slices/auth/authSlice";
 
 export const Navbar = (): React.ReactElement => {
+  const dispatch = useDispatch()
   const status = useSelector((state: RootState) => state.auth.status);
   const isAuthenticating = useMemo(() => status === "authenticated", [status]);
+
+  const handleLogout = (): void => {
+		dispatch(logout(''))
+		localStorage.clear()
+	}
 
   return (
     <header>
@@ -26,7 +33,7 @@ export const Navbar = (): React.ReactElement => {
                 Home
               </Link>
               <Button
-                onClick={() => console.log("cerrar sesion")}
+                onClick={handleLogout}
                 label="Cerrar sesión"
               ></Button>
             </div>
