@@ -29,7 +29,7 @@ export const ContentDetails = (): React.ReactElement => {
         background: `${gradient},url('${data?.movie.img}')`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        height: "calc(100vh - 72px)",
+        height: "100vh",
       }}
     >
       <div className=" w-full md:w-5/12 h-full flex flex-col items-start justify-center gap-7 p-10">
