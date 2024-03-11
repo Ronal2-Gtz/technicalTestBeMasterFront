@@ -27,7 +27,7 @@ export const ContentCategory = (): React.ReactElement => {
         <div className="w-full flex items-center justify-center flex-wrap gap-5 ">
           {data?.movies.map((movie) => (
             <Link
-              to={`/detail/${movie.path}`}
+              to={`/detail/${categoryId}/${movie.path}`}
               className="flex items-center justify-center"
             >
               <div
